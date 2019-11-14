@@ -5,6 +5,9 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "./:/app"
+      - ".:/opt/app"
     container_name: api
-    command: python /app/app.py
+    command: python /opt/app/app.py >> /dev/null
+    environment:
+      - CLIENT_ID="${CLIENT_ID}"
+      - CLIENT_SECRET="${CLIENT_SECRET}"
