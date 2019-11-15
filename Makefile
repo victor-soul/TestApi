@@ -12,4 +12,12 @@ down:
 
 .PHONY = install
 install:
-	docker-compose exec api pip install -r /opt/app/requirements.txt
+	docker-compose exec api pip install -r requirements.txt
+
+.PHONY = tests
+tests:
+	docker-compose exec api python -m unittest testApp.py
+
+.PHONY = logs
+logs:
+	docker-compose logs -f

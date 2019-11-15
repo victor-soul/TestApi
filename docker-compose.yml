@@ -7,6 +7,6 @@ services:
     volumes:
       - ".:/opt/app"
     container_name: api
-    command: python /opt/app/app.py >> /dev/null
+    command: python /opt/app/app.py
     environment:
       - TOKEN="${TOKEN}"

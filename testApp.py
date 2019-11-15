@@ -12,5 +12,5 @@ class AppTest(unittest.TestCase):
         self.assertEqual(401, response.status_code)
     
     def testApiShouldReturn422(self):
-        response = requests.get('http://0.0.0.0/search', headers={'Authorization': environ['TOKEN']}
+        response = requests.get('http://0.0.0.0/search', headers={'Authorization': environ['TOKEN']})
         self.assertEqual(422, response.status_code)
