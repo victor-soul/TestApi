@@ -10,8 +10,7 @@ app = Flask(__name__)
 @app.route('/search')
 def search():
     try:
-        validator = Validator(request)
-        validator.validate()
+        Validator(request).validate()
         query = request.args.get('query')
         headers = {k:v for k, v in self.__request.headers.items()}
         authorization = headers.get('Authorization')
@@ -23,7 +22,7 @@ def search():
     except ValueError as ex:
         return jsonify({"message": ex.args[0][0]}), 422
     except Unauthorized as ex:
-        return jsonify({"message": ex.args[0][0]}), 401
+        return jsonify({"message": ex.description}), 401
     except Exception:
         return jsonify({"message": 'Internal Server Error'}), 500
 

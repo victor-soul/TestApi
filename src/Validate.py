@@ -13,4 +13,4 @@ class Validator:
         headers = {k:v for k, v in self.__request.headers.items()}
         authorization = headers.get('Authorization')
         if authorization is None:
-            raise Unauthorized(('Missing Authorization header is required',))
+            raise Unauthorized(description='Missing Authorization header is required')

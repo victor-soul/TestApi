@@ -9,5 +9,4 @@ services:
     container_name: api
     command: python /opt/app/app.py >> /dev/null
     environment:
-      - CLIENT_ID="${CLIENT_ID}"
-      - CLIENT_SECRET="${CLIENT_SECRET}"
+      - TOKEN="${TOKEN}"
